@@ -1,5 +1,5 @@
-import { getRandom } from '../helpers/get-random'
 import Confetti from 'js-confetti'
+import { getRandom } from '../helpers/get-random'
 let tirada = 0
 const tiradas = []
 const numeroRandom = getRandom(101, 1)
@@ -19,9 +19,7 @@ export function adivinelo () {
     tirada = 10
     document.getElementById('msg_aleatorio').textContent = 'Ganaste!!!'
     const confetti = new Confetti()
-    confetti.addConfetti({
-      emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸']
-    })
+    confetti.addConfetti()
     return
   } else if (numero > numeroRandom) {
     document.getElementById('msg_aleatorio').textContent = `El número es mas pequeño. Tirada ${tirada + 1}`
